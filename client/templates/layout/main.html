@@ -1,0 +1,21 @@
+<!-- Main page, include templates here. -->
+<head>
+	<title>ImageDataVisualisation</title>
+</head>
+
+<body>
+
+	<template name="layout"> <!-- Main layout template -->
+
+		<!-- Load header template. -->
+		{{> header}}
+
+		<!-- yield returns routes and templates from router.js. -->
+		{{> yield}}
+
+		<!-- Load footer template. -->
+		{{> footer}}
+
+	</template>
+
+</body>

@@ -10,9 +10,13 @@ Template.D3Image.onRendered(function() {
 	let c = document.getElementById("canvas");
 	let ctx = c.getContext("2d");
 	ctx.drawImage(myImg, 0, 0);
-	let img_data = ctx.getImageData(x, y, 1, 1).data;
+	let img_data = ctx.getImageData(0, 0, 300, 300).data;
 
-	alert(img_data)
+	console.log(img_data);
+
+	pixel_array = list();
+
+	
 
 });
 

@@ -19,14 +19,15 @@ Meteor.methods({
 		let i = 0;
 		if (Pixels.find().count() === 0){
 			while (i<360000){
+				counter+=1;
 				Pixels.insert({
+					pixel_nb: counter,
 					R: img_data_array[i],
 					G: img_data_array[i+1],
 					B: img_data_array[i+2],
 					A: img_data_array[i+3]
 				});
 				i+=4;
-				counter+=1;
 				console.log("inserted pixel number " + counter +" in database.");
 			}
 			console.log("-------------");

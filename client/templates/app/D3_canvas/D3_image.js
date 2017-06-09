@@ -29,6 +29,28 @@ Template.D3Image.onRendered(function() {
 		img_width,
 		img_height
 	);
+
+	let width = 300;
+let height = 300;
+
+let data = Pixels.find().fetch()
+
+console.log(data);
+
+let svg_window = d3.select("body")
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg_window.selectAll("circle")
+  .data(data)
+  .enter()
+  .append("circle")
+     // d pour les données et i pour l'index. Intégré.
+    .attr("cx", (d) => d.R)
+    .attr("cy", (d) => d.G)
+    .attr("r", 5)
+    .attr("opacity", 1);
 });
 
 

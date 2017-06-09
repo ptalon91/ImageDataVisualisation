@@ -25,8 +25,12 @@ Template.D3Image.onRendered(function() {
 	// Get image's pixel data. Returns an array of r, g, b and a values, that are not isolated for each pixel.
 	let img_data_array = context.getImageData(0, 0, img_width, img_height).data;
 
-	Meteor.myFunctions.group_RGBA_per_pixel(img_data_array, img_width, img_height)
-
+	Meteor.call(
+		'group_RGBA_per_pixel',
+		img_data_array,
+		img_width,
+		img_height
+	);
 });
 
 

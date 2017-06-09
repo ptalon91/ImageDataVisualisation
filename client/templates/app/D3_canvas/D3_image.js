@@ -2,8 +2,6 @@
 
 // Events for D3Image template.
 
-
-
 Template.D3Image.onRendered(function() {
 	
 	//Parameters...

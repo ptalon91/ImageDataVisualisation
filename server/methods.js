@@ -17,20 +17,24 @@ Meteor.methods({
 
 		// Loop to insert pixels in db.
 		let i = 0;
-		if (Pixels.find().count() === 0){
+
+		let pixels = [];
+
+		if (pixels.length === 0){
 			while (i<360000){
-				Pixels.insert({
-					R: img_data_array[i],
-					G: img_data_array[i+1],
-					B: img_data_array[i+2],
-					A: img_data_array[i+3]
-				});
-				i+=4;
-				counter+=1;
-				console.log("inserted pixel number " + counter +" in database.");
+					pixels.push({
+						R: img_data_array[i],
+						G: img_data_array[i+1],
+						B: img_data_array[i+2],
+						A: img_data_array[i+3]
+					});
+					i+=4;
+					counter+=1;
+					console.log("inserted pixel number " + counter +" in database.");
 			}
-			console.log("-------------");
-			console.log("Done.");
+		console.log("-------------");
+		console.log("Done.");
+		console.log(pixels.length);
 		}
     },
 });
